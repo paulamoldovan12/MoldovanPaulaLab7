@@ -34,16 +34,6 @@
 
         <Button Text="Add/Choose Item to buy" MaximumWidthRequest="300" Clicked="OnChooseButtonClicked"/>
 
-        <ListView x:Name="listView"
-              Margin="20"
-              SelectionMode="Single">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <TextCell Text="{Binding Description}" />
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-
         <Button Text="Delete Item" MaximumWidthRequest="200" Clicked="OnDeleteItemButtonClicked" />
 
     </StackLayout>
