@@ -33,6 +33,24 @@ public partial class ListPage : ContentPage
         });
     }
 
+    async void OnDeleteItemButtonClicked(object sender, EventArgs e)
+    {
+        var selectedProduct = listView.SelectedItem as Product;
+
+        if (selectedProduct != null)
+        {
+            await App.Database.DeleteProductAsync(selectedProduct);
+
+            var shopList = (ShopList)this.BindingContext;
+            listView.ItemsSource = await App.Database.GetListProductsAsync(shopList.ID);
+        }
+        else
+        {
+            await DisplayAlert("Eroare", "Selecta?i un produs pentru a-l ?terge.", "OK");
+        }
+    }
+
+
     protected override async void OnAppearing()
     {
         base.OnAppearing();
