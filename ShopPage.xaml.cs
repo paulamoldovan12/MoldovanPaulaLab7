@@ -6,8 +6,8 @@ public partial class ShopPage : ContentPage
 {
 	public ShopPage()
 	{
-		InitializeComponent();
-	}
+        InitializeComponent();
+    }
 
     async void OnSaveButtonClicked(object sender, EventArgs e)
     {
@@ -27,9 +27,8 @@ public partial class ShopPage : ContentPage
             Name = "Magazinul meu preferat" 
         };
 
-        var shoplocation = locations?.FirstOrDefault();
-        /* var shoplocation= new Location(46.7492379, 23.5745597);//pentru 
-        Windows Machine */
+       // var shoplocation = locations?.FirstOrDefault();
+        var shoplocation= new Location(46.7492379, 23.5745597); //pentru Windows Machine 
         await Map.OpenAsync(shoplocation, options);
     }
 

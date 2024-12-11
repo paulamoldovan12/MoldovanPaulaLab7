@@ -4,8 +4,7 @@
              x:Class="MoldovanPaulaLab7.ShopEntryPage"
              Title="ShopEntryPage">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add Shop" 
-                     Clicked="OnShopAddedClicked" />
+        <ToolbarItem Text="Add Shop" Clicked="OnShopAddedClicked" />
     </ContentPage.ToolbarItems>
     <ListView x:Name="listView" 
               Margin="20" 
@@ -17,10 +16,4 @@
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
 </ContentPage>
