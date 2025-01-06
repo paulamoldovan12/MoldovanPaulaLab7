@@ -8,13 +8,13 @@
             Padding="30,0"
             Spacing="25">
             <Image
-                Source="imag.jpg"
+                Source="cafea.jpg"
                 HeightRequest="185"
                 Aspect="AspectFit"
                 SemanticProperties.Description="dot net bot in a race car number eight" />
 
             <Label
-                Text="Servus, Paula!"
+                Text="Bun venit la depozitul nostru de cafea!"
                 Style="{StaticResource Headline}"
                 SemanticProperties.HeadingLevel="Level1" />
 
