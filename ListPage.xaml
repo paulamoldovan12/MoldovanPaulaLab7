@@ -12,6 +12,7 @@
                     <local:ValidationBehaviour />
                 </Editor.Behaviors>
             </Editor>
+        <Picker x:Name="WarehousePicker" Title="Enter Warehouse Name"/>
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />

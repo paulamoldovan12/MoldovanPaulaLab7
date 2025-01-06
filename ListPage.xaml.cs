@@ -13,6 +13,8 @@ public partial class ListPage : ContentPage
     {
         var clist = (CoffeeList)BindingContext;
         clist.Date = DateTime.UtcNow;
+        Warehouse selectedWarehouse = (WarehousePicker.SelectedItem as Warehouse);
+        clist.WarehouseID = selectedWarehouse.ID;
         await App.Database.SaveCoffeeListAsync(clist);
         await Navigation.PopAsync();
     }
@@ -55,6 +57,10 @@ public partial class ListPage : ContentPage
     protected override async void OnAppearing()
     {
         base.OnAppearing();
+
+        var items = await App.Database.GetWarehousesAsync();
+        WarehousePicker.ItemsSource = (System.Collections.IList)items;
+        WarehousePicker.ItemDisplayBinding = new Binding("WarehouseDetails");
 
         var coffeel = (CoffeeList)BindingContext;
 

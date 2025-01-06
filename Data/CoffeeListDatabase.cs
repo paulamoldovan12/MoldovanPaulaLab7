@@ -18,6 +18,7 @@ namespace MoldovanPaulaLab7.Data
             _database.CreateTableAsync<CoffeeList>().Wait();
             _database.CreateTableAsync<Coffee>().Wait();
             _database.CreateTableAsync<ListCoffee>().Wait();
+            _database.CreateTableAsync<Warehouse>().Wait();
         }
         public Task<int> SaveCoffeeAsync(Coffee coffee)
         {
@@ -90,6 +91,24 @@ namespace MoldovanPaulaLab7.Data
          + " on C.ID = LC.CoffeeID where LC.CoffeeListID = ?",
          coffeelistid);
 
+        }
+
+        public Task<List<Warehouse> GetWarehousesAsync()
+        {
+            return _database.Table<Warehouse>().ToListAsync();
+        }
+
+
+        public Task<int> SaveWarehouseAsync(Warehouse warehouse)
+        {
+            if (warehouse.ID != 0)
+            {
+                return _database.UpdateAsync(warehouse);
+            }
+            else
+            {
+                return _database.InsertAsync(warehouse);
+            }
         }
     }
 }
