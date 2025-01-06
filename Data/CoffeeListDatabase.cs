@@ -93,7 +93,7 @@ namespace MoldovanPaulaLab7.Data
 
         }
 
-        public Task<List<Warehouse> GetWarehousesAsync()
+        public Task<List<Warehouse>> GetWarehousesAsync()
         {
             return _database.Table<Warehouse>().ToListAsync();
         }
