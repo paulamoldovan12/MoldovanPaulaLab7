@@ -9,13 +9,17 @@
 
     <TabBar>
         <ShellContent 
-            Title="Shopping Lists" 
+            Title="Welcome to our coffee warehouse" 
             ContentTemplate="{DataTemplate local:MainPage}" 
             />
         <ShellContent 
             Title="About" 
             ContentTemplate="{DataTemplate local:AboutPage}" 
             />
+        <ShellContent 
+            Title="My Coffee Lists" 
+            ContentTemplate="{DataTemplate local:ListEntryPage}" 
+    />
     </TabBar>
 
 </Shell>
