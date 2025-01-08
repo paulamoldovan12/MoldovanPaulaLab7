@@ -20,15 +20,15 @@ public partial class WarehousePage : ContentPage
     {
         var warehouse = (Warehouse)BindingContext;
         var address = warehouse.Adress;
-        var locations = await Geocoding.GetLocationsAsync(address);
+        //var locations = await Geocoding.GetLocationsAsync(address);
 
         var options = new MapLaunchOptions
         {
             Name = "Depozitul de cafea" };
 
-        var warehouselocation = locations?.FirstOrDefault();
-        var shoplocation= new Location(46.7504397, 23.60114477); //pentru Windows Machine 
+        //var warehouselocation = locations?.FirstOrDefault();
+        var warehouselocation= new Location(46.7504397, 23.60114477); //pentru Windows Machine 
 
-        await Map.OpenAsync(shoplocation, options);
+        await Map.OpenAsync(warehouselocation, options);
     }
 }
